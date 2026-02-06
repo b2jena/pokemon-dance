@@ -1,48 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pokémon Dance Party</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pokemon Dance</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="app-header">
-    <h1>Pokémon Dance Party</h1>
-    <div class="controls">
-      <button id="btnAdd">Add Random Pokémon</button>
-      <button id="btnShuffle">Shuffle Dance</button>
-      <button id="btnClear">Clear</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="stage" id="stage" aria-live="polite">
-      <!-- Pokémon cards will be injected here -->
-    </section>
-  </main>
-
-  <footer class="app-footer">
-    <p>Data from <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">PokéAPI</a>. This is a fan project.</p>
-  </footer>
-
-  <template id="pokemon-card-template">
-    <article class="pokemon-card" tabindex="0" role="button" aria-pressed="false">
-      <div class="sprite-wrap">
-        <img class="sprite" alt="Pokémon sprite" />
-        <div class="sparkles" aria-hidden="true"></div>
-      </div>
-      <div class="meta">
-        <h2 class="name"></h2>
-        <p class="types"></p>
-        <p class="intro" hidden></p>
-      </div>
-    </article>
-  </template>
-
-  <script src="app.js" type="module"></script>
+<div class="container">
+    <h1>✨ Pokemon Dance Party ✨</h1>
+    <div id="pokemon-stage"></div>
+    <button id="add-pokemon">Add Random Pokemon</button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
