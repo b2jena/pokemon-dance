@@ -13,11 +13,11 @@ async function fetchPokemon() {
     const id = Math.floor(Math.random() * 898) + 1;
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await res.json();
-    
+
     const speciesRes = await fetch(data.species.url);
     const speciesData = await speciesRes.json();
     const description = speciesData.flavor_text_entries.find(e => e.language.name === 'en')?.flavor_text.replace(/\f/g, ' ') || 'A mysterious Pokemon!';
-    
+
     return {
         name: data.name,
         image: data.sprites.other['official-artwork'].front_default || data.sprites.front_default,
@@ -30,26 +30,37 @@ async function fetchPokemon() {
 function createPokemonCard(pokemon) {
     const card = document.createElement('div');
     card.className = 'pokemon';
-    
-    const typeBadges = pokemon.types.map(type => 
+
+    const typeBadges = pokemon.types.map(type =>
         `<span class="type-badge" style="background: ${typeColors[type] || '#777'}">${type}</span>`
     ).join('');
-    
+
+    const statsHtml = pokemon.stats.split(', ').map(stat => {
+        const [name, value] = stat.split(': ');
+        return `<div class="stat-item"><span class="stat-name">${name}</span><span class="stat-value">${value}</span></div>`;
+    }).join('');
+
     card.innerHTML = `
         <img src="${pokemon.image}" alt="${pokemon.name}" loading="lazy">
         <div class="pokemon-name">${pokemon.name}</div>
         <div class="pokemon-types">${typeBadges}</div>
         <div class="pokemon-info">
-            <p><strong>Description:</strong> ${pokemon.description}</p>
-            <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.7;">${pokemon.stats}</p>
+            <div class="info-section">
+                <div class="info-label">✨ About</div>
+                <p class="info-desc">${pokemon.description}</p>
+            </div>
+            <div class="info-section">
+                <div class="info-label">⚡ Stats</div>
+                <div class="stats-grid">${statsHtml}</div>
+            </div>
         </div>
     `;
-    
+
     card.addEventListener('click', () => {
         const info = card.querySelector('.pokemon-info');
         info.classList.toggle('show');
     });
-    
+
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -57,7 +68,7 @@ function createPokemonCard(pokemon) {
         card.style.setProperty('--x', `${x}%`);
         card.style.setProperty('--y', `${y}%`);
     });
-    
+
     setTimeout(() => card.style.opacity = '1', 50);
     return card;
 }
@@ -66,7 +77,7 @@ addBtn.addEventListener('click', async () => {
     addBtn.disabled = true;
     const span = addBtn.querySelector('span');
     span.textContent = 'Summoning...';
-    
+
     try {
         const pokemon = await fetchPokemon();
         const card = createPokemonCard(pokemon);
@@ -76,7 +87,7 @@ addBtn.addEventListener('click', async () => {
     } catch (error) {
         alert('Failed to fetch Pokemon. Try again!');
     }
-    
+
     addBtn.disabled = false;
     span.textContent = 'Summon Pokemon';
 });

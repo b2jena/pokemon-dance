@@ -1,217 +1,241 @@
 /* Cute, responsive styling and animations */
 :root {
-  --bg: #fff7fd;
-  --card: #ffffff;
-  --accent: #ff6db2;
-  --accent-2: #6dc9ff;
-  --text: #2a2734;
-  --muted: #7b748a;
-  --shadow: 0 10px 20px rgba(0,0,0,0.08);
+    --bg: #fff7fd;
+    --card: #ffffff;
+    --accent: #ff6db2;
+    --accent-2: #6dc9ff;
+    --text: #2a2734;
+    --muted: #7b748a;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 html, body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: 'Fredoka', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
-  color: var(--text);
-  background: radial-gradient(1200px 800px at 10% 10%, #fff0fb, transparent),
-              radial-gradient(1200px 900px at 90% 20%, #f0fbff, transparent),
-              var(--bg);
+    margin: 0;
+    font-family: 'Fredoka', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+    color: var(--text);
+    background: radial-gradient(1200px 800px at 10% 10%, #fff0fb, transparent),
+    radial-gradient(1200px 900px at 90% 20%, #f0fbff, transparent),
+    var(--bg);
 }
 
 .app-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid #f2e7f0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #f2e7f0;
 }
 
 .app-header h1 {
-  margin: 0;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #ec3e93;
-  text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ec3e93;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
 }
 
 .controls {
-  display: flex;
-  gap: .5rem;
+    display: flex;
+    gap: .5rem;
 }
 
 button {
-  appearance: none;
-  border: none;
-  border-radius: 999px;
-  padding: .65rem 1rem;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(135deg, var(--accent), #ff9fd0);
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+    appearance: none;
+    border: none;
+    border-radius: 999px;
+    padding: .65rem 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, var(--accent), #ff9fd0);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
 }
 
 button#btnShuffle {
-  background: linear-gradient(135deg, var(--accent-2), #a3e2ff);
+    background: linear-gradient(135deg, var(--accent-2), #a3e2ff);
 }
 
 button#btnClear {
-  background: linear-gradient(135deg, #7f7fdd, #bdbdff);
+    background: linear-gradient(135deg, #7f7fdd, #bdbdff);
 }
 
 button:active {
-  transform: translateY(1px) scale(0.98);
-  filter: brightness(0.97);
+    transform: translateY(1px) scale(0.98);
+    filter: brightness(0.97);
 }
 
 main {
-  padding: 1.25rem;
+    padding: 1.25rem;
 }
 
 .stage {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-  align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
 }
 
 .pokemon-card {
-  position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  align-items: center;
-  background: var(--card);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  padding: 1rem;
-  outline: none;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 .pokemon-card:focus-visible {
-  border-color: #ff9fd0;
+    border-color: #ff9fd0;
 }
 
 .pokemon-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
 }
 
 .sprite-wrap {
-  position: relative;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1 / 1;
-  background: radial-gradient(circle at 50% 40%, #fff9fd, #f7f7ff 60%, #f1f1ff 100%);
-  border-radius: 14px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle at 50% 40%, #fff9fd, #f7f7ff 60%, #f1f1ff 100%);
+    border-radius: 14px;
+    overflow: hidden;
 }
 
 .sprite {
-  width: 70%;
-  image-rendering: pixelated;
-  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
-  transform-origin: 50% 90%;
+    width: 70%;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.15));
+    transform-origin: 50% 90%;
 }
 
 .sparkles::before,
 .sparkles::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.8), transparent 30%),
-              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.7), transparent 35%),
-              radial-gradient(circle at 60% 20%, rgba(255,255,255,0.5), transparent 30%);
-  mix-blend-mode: screen;
-  opacity: 0;
-  animation: twinkle 2.4s ease-in-out infinite;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.8), transparent 30%),
+    radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.7), transparent 35%),
+    radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.5), transparent 30%);
+    mix-blend-mode: screen;
+    opacity: 0;
+    animation: twinkle 2.4s ease-in-out infinite;
 }
 
 .sparkles::after {
-  animation-delay: 1.2s;
+    animation-delay: 1.2s;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .meta {
-  text-align: center;
+    text-align: center;
 }
 
 .name {
-  margin: .5rem 0 .25rem;
-  font-size: 1.1rem;
+    margin: .5rem 0 .25rem;
+    font-size: 1.1rem;
 }
 
 .types {
-  margin: 0;
-  color: var(--muted);
-  font-size: .95rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: .95rem;
 }
 
 .intro {
-  margin: .5rem auto 0;
-  font-size: .95rem;
-  line-height: 1.3;
-  color: #4a435a;
+    margin: .5rem auto 0;
+    font-size: .95rem;
+    line-height: 1.3;
+    color: #4a435a;
 }
 
 /* Dance animations */
 @keyframes bounce {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-6%) scale(1.02); }
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-6%) scale(1.02);
+    }
 }
 
 @keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-6deg); }
-  75% { transform: rotate(6deg); }
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-6deg);
+    }
+    75% {
+        transform: rotate(6deg);
+    }
 }
 
 @keyframes disco-bg {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .dancing .sprite {
-  animation: bounce 1.2s ease-in-out infinite;
+    animation: bounce 1.2s ease-in-out infinite;
 }
 
 .dancing .sprite-wrap {
-  animation: wiggle 2.2s ease-in-out infinite;
+    animation: wiggle 2.2s ease-in-out infinite;
 }
 
 .stage.shuffle {
-  background: linear-gradient(90deg, #ffebf7, #ebfffd, #fff7eb);
-  background-size: 200% 200%;
-  border-radius: 16px;
-  padding: 1rem;
-  animation: disco-bg 4s linear infinite;
+    background: linear-gradient(90deg, #ffebf7, #ebfffd, #fff7eb);
+    background-size: 200% 200%;
+    border-radius: 16px;
+    padding: 1rem;
+    animation: disco-bg 4s linear infinite;
 }
 
 footer.app-footer {
-  padding: 1rem 1.25rem 2rem;
-  color: var(--muted);
-  text-align: center;
+    padding: 1rem 1.25rem 2rem;
+    color: var(--muted);
+    text-align: center;
 }
 
-footer a { color: #7b7bdc; }
+footer a {
+    color: #7b7bdc;
+}

@@ -58,7 +58,7 @@ body {
 
 .hero p {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 300;
 }
 
@@ -76,9 +76,9 @@ body {
 }
 
 .pokemon {
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: clamp(24px, 3vw, 32px);
     padding: clamp(1.5rem, 3vw, 2.5rem);
     cursor: pointer;
@@ -92,7 +92,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.1), transparent 50%);
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.1), transparent 50%);
     opacity: 0;
     transition: opacity 0.4s;
 }
@@ -103,8 +103,8 @@ body {
 
 .pokemon:hover {
     transform: translateY(-8px) scale(1.02);
-    border-color: rgba(255,255,255,0.2);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .pokemon img {
@@ -114,7 +114,7 @@ body {
     margin: 0 auto;
     display: block;
     transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
 .pokemon:hover img {
@@ -154,25 +154,79 @@ body {
 .pokemon-info {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s, padding 0.5s;
     opacity: 0;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     margin-top: 1rem;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .pokemon-info.show {
-    max-height: 500px;
+    max-height: 600px;
     opacity: 1;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
-.pokemon-info p {
+.info-section {
+    margin-bottom: 1.2rem;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+.info-label {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
+}
+
+.info-desc {
     font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-    line-height: 1.6;
-    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+}
+
+.stats-grid {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.stat-name {
+    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
 }
 
 .action-zone {
@@ -224,9 +278,15 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(10vw, 10vh) scale(1.1); }
-    66% { transform: translate(-10vw, 5vh) scale(0.9); }
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(10vw, 10vh) scale(1.1);
+    }
+    66% {
+        transform: translate(-10vw, 5vh) scale(0.9);
+    }
 }
 
 @media (max-width: 768px) {
