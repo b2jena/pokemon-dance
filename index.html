@@ -2,16 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Dance</title>
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>✨ Pokemon Dance Party ✨</h1>
-    <div id="pokemon-stage"></div>
-    <button id="add-pokemon">Add Random Pokemon</button>
-</div>
-<script src="script.js"></script>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <header class="hero">
+        <h1>Pokemon Universe</h1>
+        <p>Discover creatures from another world</p>
+    </header>
+    
+    <main class="flow-container">
+        <div id="pokemon-stage" class="bento-grid"></div>
+        <div class="action-zone">
+            <button id="add-pokemon" class="cta-btn">
+                <span>Summon Pokemon</span>
+            </button>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
 </body>
 </html>
