@@ -1,6 +1,7 @@
 # Pokemon Universe 🌟
 
-A modern, interactive web experience showcasing random Pokemon with fluid animations and organic design aesthetics for 2026.
+A modern, interactive web experience showcasing random Pokemon with fluid animations and organic design aesthetics for
+2026.
 
 ## ✨ Features
 
@@ -57,6 +58,7 @@ pokemon-dance/
 ## 🌐 Browser Support
 
 Requires modern browsers with support for:
+
 - CSS backdrop-filter
 - CSS clamp()
 - ES6+ JavaScript
@@ -67,6 +69,7 @@ Recommended: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
 ## 📊 Pokemon Data
 
 Each card displays:
+
 - Official artwork
 - Pokemon name
 - Type badges (with official colors)
